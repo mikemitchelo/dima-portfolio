@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дима Колесников — Продуктовый дизайнер</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="tab-menu">
+    <a href="#cases" class="nav-link">Кейсы</a>
+    <a href="#about" class="nav-link">О себе</a>
+    <a href="#experience" class="nav-link">Опыт</a>
+    <div class="nav-divider"></div>
+    <a href="https://drive.google.com/file/d/1CqAja37Eo5lDWBlTloKPhl8Gios4nPJc/view?usp=sharing" class="nav-link" target="_blank">CV</a>
+    <a href="https://t.me/mike_mitchelo" class="nav-btn" target="_blank">Контакты</a>
+    <div class="nav-divider"></div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+
+    <div class="hero-content">
+      <div class="hero-header-row">
+        <span class="hero-text">Привет, я Дима</span>
+        <span class="hero-emoji-dash">
+          <img src="images/Дима глав.png" alt="" class="hero-emoji">
+          <span class="hero-text">—</span>
+        </span>
+      </div>
+      <div class="hero-title-pill">
+        <span>Продуктовый дизайнер</span>
+      </div>
+      <p class="hero-desc">Проектирую простые решения для сложных систем. Запускаю продукты с&nbsp;нуля и&nbsp;создаю интерфейсы, которыми пользуются сотрудники еженедельно.</p>
+    </div>
+
+    <span class="hero-location">МОСКВА</span>
+  </section>
+
+  <!-- CASES -->
+  <section class="section cases-section" id="cases">
+    <div class="container">
+
+      <div class="section-intro fade-in">
+        <div class="section-label">
+          <span class="label-dot"></span>
+          <span class="label-text">Кейсы</span>
+        </div>
+        <h2 class="section-heading">
+          <div class="heading-row">
+            <span class="heading-text">Что я</span>
+            <span class="heading-pill">спроектировал</span>
+          </div>
+          <span class="heading-text heading-text--block">в этом году</span>
+        </h2>
+        <p class="section-desc">Ключевые кейсы и&nbsp;личные фавориты. Мобильный концепт добавил не&nbsp;ради UI, а&nbsp;для демонстрации дизайн-процесса, который я&nbsp;развиваю и&nbsp;адаптирую под новые задачи ежедневно.</p>
+      </div>
+
+      <!-- Featured card -->
+      <a href="cases/etl.html" class="card-link">
+      <article class="case-card case-card--featured fade-in">
+        <div class="featured-img-area">
+          <img src="images/ETL.png" alt="PIX BI платформа">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="meta-company">PIX Robotics · 2025</span>
+            <span class="meta-sep"></span>
+            <span class="meta-role">Product Designer</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Проектирование ETL в PIX BI</h3>
+            <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки сложных моделей данных, превратив техническую настройку в&nbsp;понятную интерактивную схему.</p>
+          </div>
+          <div class="card-tags">
+            <span class="tag">Product Design</span>
+            <span class="tag">Design System</span>
+            <span class="tag">UX Research</span>
+          </div>
+        </div>
+      </article>
+      </a>
+
+      <!-- Cards row 1 -->
+      <div class="cards-row fade-in">
+        <!-- Dashboard -->
+        <a href="cases/dashboard.html" class="card-link">
+        <article class="case-card case-card--blue">
+          <div class="card-img-area card-img-area--dashboard">
+            <img src="images/Редактор тем 1.png" alt="" class="abs-img dash-img-1">
+            <img src="images/Редактор тем 2.png" alt="" class="abs-img dash-img-2">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="meta-company">PIX Robotics · 2025</span>
+              <span class="meta-sep"></span>
+              <span class="meta-role">Product Designer</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Дизайн инструмента для управления темами дашборда</h3>
+              <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code.</p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Product Design</span>
+              <span class="tag">Design System</span>
+              <span class="tag">UX Research</span>
+            </div>
+          </div>
+        </article>
+        </a>
+
+        <!-- PIX Academy -->
+        <a href="cases/pix-academy.html" class="card-link">
+        <div class="card-wrapper">
+          <article class="case-card case-card--blue">
+            <div class="card-img-area card-img-area--pix">
+              <!-- images float outside card in wrapper -->
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="meta-company">PIX Robotics · 2025</span>
+                <span class="meta-sep"></span>
+                <span class="meta-role">Product Designer</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Редизайн сайта PIX Академия</h3>
+                <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки сложных моделей данных.</p>
+              </div>
+              <div class="card-tags">
+                <span class="tag">Product Design</span>
+                <span class="tag">Design System</span>
+                <span class="tag">UX Research</span>
+              </div>
+            </div>
+          </article>
+          <img src="images/Пикс акад.png" alt="" class="float-img float-img--1">
+          <img src="images/Пикс акад 2.png" alt="" class="float-img float-img--2">
+        </div>
+        </a>
+      </div>
+
+      <!-- Cards row 2 -->
+      <div class="cards-row fade-in">
+        <!-- Bookmarks -->
+        <a href="cases/bookmarks.html" class="card-link">
+        <article class="case-card case-card--blue">
+          <div class="card-img-area card-img-area--mobile">
+            <img src="images/Заклдаки 1.png" alt="" class="abs-img mob-img-1">
+            <img src="images/Закладки 2.png" alt="" class="abs-img mob-img-2">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="meta-company">PIX Robotics · 2025</span>
+              <span class="meta-sep"></span>
+              <span class="meta-role">Product Designer</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Рефакторинг панели закладок</h3>
+              <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки сложных моделей данных.</p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Product Design</span>
+              <span class="tag">Design System</span>
+              <span class="tag">UX Research</span>
+            </div>
+          </div>
+        </article>
+        </a>
+
+        <!-- Plant pal -->
+        <a href="cases/plant-pal.html" class="card-link">
+        <article class="case-card case-card--green">
+          <div class="card-img-area card-img-area--plant">
+            <img src="images/Плант 1.png" alt="" class="plant-img plant-img--1">
+            <img src="images/Плант 2.png" alt="" class="plant-img plant-img--2">
+            <img src="images/Плант 1.png" alt="" class="plant-img plant-img--3">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="meta-company">Pet · 2025</span>
+              <span class="meta-sep"></span>
+              <span class="meta-role">UX/UI</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Дизайн приложения Plant pal</h3>
+              <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки.</p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Product Design</span>
+              <span class="tag">Design System</span>
+              <span class="tag">UX Research</span>
+            </div>
+          </div>
+        </article>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills-section" id="about">
+    <div class="container">
+      <div class="section-intro fade-in">
+        <div class="section-label">
+          <span class="label-dot"></span>
+          <span class="label-text">Что я делаю</span>
+        </div>
+        <h2 class="section-heading section-heading--col">
+          <span class="heading-text">Три вещи, в&nbsp;которых</span>
+          <span class="heading-pill">я сильнее всего</span>
+        </h2>
+        <p class="section-desc" style="max-width: 524px;">Ключевые кейсы и&nbsp;личные фавориты. Мобильный концепт добавил не&nbsp;ради UI, а&nbsp;для демонстрации дизайн-процесса, который я&nbsp;развиваю и&nbsp;адаптирую под новые задачи ежедневно.</p>
+      </div>
+
+      <div class="skills-grid fade-in">
+        <div class="skill-col">
+          <h3 class="skill-title">Продуктовый дизайн</h3>
+          <p class="skill-desc">Проектирую интерфейсы B2B-систем: от product discovery до handoff. Работаю с&nbsp;метриками — не&nbsp;«красиво», а&nbsp;«работает».</p>
+          <div class="skill-tags">
+            <span class="tag tag--purple">JTBD</span>
+            <span class="tag tag--purple">User stories</span>
+            <span class="tag tag--purple">Wireframes</span>
+            <span class="tag tag--purple">Prototyping</span>
+          </div>
+        </div>
+        <div class="skill-col skill-col--bordered">
+          <h3 class="skill-title">Дизайн-системы</h3>
+          <p class="skill-desc">Проектирую интерфейсы B2B-систем: от product discovery до handoff. Работаю с&nbsp;метриками — не&nbsp;«красиво», а&nbsp;«работает».</p>
+          <div class="skill-tags">
+            <span class="tag tag--purple">Tokens</span>
+            <span class="tag tag--purple">Components</span>
+            <span class="tag tag--purple">Devmode</span>
+            <span class="tag tag--purple">Design QA</span>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3 class="skill-title">Исследования</h3>
+          <p class="skill-desc">Проектирую интерфейсы B2B-систем: от product discovery до handoff. Работаю с&nbsp;метриками — не&nbsp;«красиво», а&nbsp;«работает».</p>
+          <div class="skill-tags">
+            <span class="tag tag--purple">Interviews</span>
+            <span class="tag tag--purple">Usability</span>
+            <span class="tag tag--purple">CSAT/CES/NPS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience-section" id="experience">
+    <div class="container">
+      <div class="section-intro fade-in">
+        <div class="section-label">
+          <span class="label-dot"></span>
+          <span class="label-text">Опыт и образование</span>
+        </div>
+        <h2 class="section-heading">
+          <div class="heading-row">
+            <span class="heading-text">Дорога до</span>
+            <span class="heading-pill">дизайна</span>
+          </div>
+          <span class="heading-text heading-text--block">была длинной</span>
+        </h2>
+        <p class="section-desc">Юрфак, общепит, кадетка, музыка, два города на&nbsp;Урале и&nbsp;в&nbsp;Поволжье. В&nbsp;дизайн пришёл в&nbsp;2022-м — и&nbsp;нашёл то, чем готов заниматься долго.</p>
+      </div>
+
+      <div class="timeline fade-in">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2025 — сейчас</span>
+            <div class="timeline-detail">
+              <h3 class="timeline-company">PIX Robotics</h3>
+              <p class="timeline-text">BI-платформа, дизайн-система, проектирование сложных аналитических интерфейсов. Работаю над&nbsp;структурой продукта целиком.</p>
+            </div>
+          </div>
+          <span class="timeline-role">Product Designer</span>
+        </div>
+        <div class="timeline-divider"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2025 — сейчас</span>
+            <div class="timeline-detail">
+              <h3 class="timeline-company">ТОТО</h3>
+              <p class="timeline-text">Графика, баннеры, иконки, поддержка старших дизайнеров. Подготовка макетов под печать и&nbsp;веб.</p>
+            </div>
+          </div>
+          <span class="timeline-role">Intern designer</span>
+        </div>
+        <div class="timeline-divider"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2025 — сейчас</span>
+            <div class="timeline-detail">
+              <h3 class="timeline-company">WannaBe</h3>
+              <p class="timeline-text">BI-платформа, дизайн-система, проектирование сложных аналитических интерфейсов. Работаю над&nbsp;структурой продукта целиком.</p>
+            </div>
+          </div>
+          <span class="timeline-role">Курс UX/UI</span>
+        </div>
+        <div class="timeline-divider"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2025 — сейчас</span>
+            <div class="timeline-detail">
+              <h3 class="timeline-company">Яндекс.Практикум</h3>
+              <p class="timeline-text">Базовые навыки UX/UI, прототипирование, работа с&nbsp;Figma.</p>
+            </div>
+          </div>
+          <span class="timeline-role">Курс UX/UI</span>
+        </div>
+        <div class="timeline-divider"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2025 — сейчас</span>
+            <div class="timeline-detail">
+              <h3 class="timeline-company">РГСУ</h3>
+              <p class="timeline-text">Бакалавриат. Международное и&nbsp;конституционное право. Учит структурно мыслить — и&nbsp;это пригодилось в&nbsp;дизайне.</p>
+            </div>
+          </div>
+          <span class="timeline-role">Курс UX/UI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="cta-section fade-in">
+    <div class="blob cta-blob--1"></div>
+    <div class="blob cta-blob--2"></div>
+    <div class="blob cta-blob--3"></div>
+
+    <div class="cta-inner">
+      <div class="cta-heading-block">
+        <p class="cta-title-text">Есть продукт в&nbsp;котором всё&nbsp;сложно?</p>
+        <div class="cta-title-pill">Помогу разобраться</div>
+      </div>
+      <p class="cta-desc">Открыт к&nbsp;сотрудничеству, гибрид или удаленка — не&nbsp;важно. Отвечаю быстро в&nbsp;Telegram, но&nbsp;можно и&nbsp;на почту и&nbsp;по телефону ;)</p>
+      <div class="cta-actions">
+        <a href="https://t.me/mike_mitchelo" class="cta-btn" target="_blank">
+          Написать в Telegram
+          <img src="images/arrow-btn.svg" alt="" class="btn-arrow">
+        </a>
+        <a href="mailto:mikemitcheloo@yandex.ru" class="cta-email">mikemitcheloo@yandex.ru</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE BOTTOM -->
+  <div class="page-bottom">
+    <div class="container page-bottom-inner">
+      <span class="footer-copy">2026 Дима Колесников · Москва</span>
+      <div class="footer-links">
+        <a href="https://t.me/mike_mitchelo" class="footer-link" target="_blank">Telegram</a>
+        <a href="https://drive.google.com/file/d/1CqAja37Eo5lDWBlTloKPhl8Gios4nPJc/view?usp=sharing" class="footer-link" target="_blank">CV</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') html.removeAttribute('data-theme');
+    else html.setAttribute('data-theme', 'dark');
+
+    toggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const start = window.scrollY;
+        const end = target.getBoundingClientRect().top + start;
+        const duration = 550;
+        const startTime = performance.now();
+        function step(now) {
+          const t = Math.min((now - startTime) / duration, 1);
+          const ease = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+          window.scrollTo(0, start + (end - start) * ease);
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    });
+
+    // Fade-in on scroll — robust version
+    const fadeEls = Array.from(document.querySelectorAll('.fade-in'));
+
+    function revealEl(el) {
+      el.classList.add('is-visible');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          revealEl(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Reveal elements already in or near the viewport on load
+    function checkOnLoad() {
+      const vh = window.innerHeight;
+      fadeEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < vh) revealEl(el);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkOnLoad);
+    } else {
+      checkOnLoad();
+    }
+    window.addEventListener('load', checkOnLoad);
+  </script>
+
+</body>
+</html>
