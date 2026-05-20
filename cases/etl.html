@@ -210,10 +210,18 @@
         </div>
       </div>
 
-      <div style="margin-top:48px; overflow:hidden; border-radius:16px;">
-        <div class="video-preview-wrap" id="videoPreview" style="max-width:100%;">
-          <span class="video-badge">AS IS</span>
-          <video src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
+      <div style="margin-top:48px; display:flex; flex-direction:column; gap:24px;">
+        <div style="overflow:hidden; border-radius:16px;">
+          <div class="video-preview-wrap" id="videoPreview1" data-src="../video/Old%20ETL.mp4" data-badge="AS IS" style="max-width:100%;">
+            <span class="video-badge">AS IS</span>
+            <video src="../video/Old%20ETL.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+        <div style="overflow:hidden; border-radius:16px;">
+          <div class="video-preview-wrap" id="videoPreview2" data-src="../video/NEW%20ETL.mp4" data-badge="New Design" style="max-width:100%;">
+            <span class="video-badge" style="background:rgba(80,180,100,0.7);">New Design</span>
+            <video src="../video/NEW%20ETL.mp4" autoplay muted loop playsinline></video>
+          </div>
         </div>
       </div>
 
@@ -223,9 +231,8 @@
   <!-- Lightbox -->
   <div class="video-lightbox" id="videoLightbox">
     <div style="position:relative; display:inline-flex;">
-      <video id="lightboxVideo" src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
-      <span class="video-badge">AS IS</span>
-    </div>
+      <video id="lightboxVideo" autoplay muted loop playsinline></video>
+      <span class="video-badge" id="lightboxBadge"></span>
     </div>
     <div class="lightbox-bar">
       <button class="lightbox-back" id="lightboxBack">
@@ -263,19 +270,31 @@
     document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
     // Lightbox
-    const preview  = document.getElementById('videoPreview');
-    const lightbox = document.getElementById('videoLightbox');
-    const lbVideo  = document.getElementById('lightboxVideo');
+    const lightbox  = document.getElementById('videoLightbox');
+    const lbVideo   = document.getElementById('lightboxVideo');
+    const lbBadge   = document.getElementById('lightboxBadge');
 
-    preview.addEventListener('click', () => {
+    function openLightbox(src, badge, badgeStyle) {
+      lbVideo.src = src;
+      lbBadge.textContent = badge;
+      lbBadge.style.cssText = badgeStyle || '';
       lightbox.classList.add('is-open');
       document.body.style.overflow = 'hidden';
-    });
+    }
 
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
+      lbVideo.src = '';
     }
+
+    document.getElementById('videoPreview1').addEventListener('click', () => {
+      openLightbox('../video/Old%20ETL.mp4', 'AS IS');
+    });
+
+    document.getElementById('videoPreview2').addEventListener('click', () => {
+      openLightbox('../video/NEW%20ETL.mp4', 'New Design', 'background:rgba(80,180,100,0.7);');
+    });
 
     document.getElementById('lightboxBack').addEventListener('click', closeLightbox);
 
