@@ -208,15 +208,23 @@
         </div>
       </div>
 
-      <!-- Full-width video -->
-      <div style="margin-top:48px; overflow:hidden; border-radius:16px;">
-        <div class="video-preview-wrap" id="videoPreview" style="max-width:100%;">
-          <span class="video-badge" style="background:rgba(113,81,255,0.75);">New Design</span>
-          <video src="../video/dashboard.mp4" autoplay muted loop playsinline></video>
+      <!-- Full-width videos -->
+      <div style="margin-top:48px; display:flex; flex-direction:column; gap:24px;">
+        <div style="overflow:hidden; border-radius:16px;">
+          <div class="video-preview-wrap" id="videoPreview1" style="max-width:100%;">
+            <span class="video-badge" style="background:rgba(113,81,255,0.75);">New Design</span>
+            <video src="../video/Редактор тем/dashboard-new.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+        <div style="overflow:hidden; border-radius:16px;">
+          <div class="video-preview-wrap" id="videoPreview2" style="max-width:100%;">
+            <span class="video-badge">Old Design</span>
+            <video src="../video/Редактор тем/Old редактор.mp4" autoplay muted loop playsinline></video>
+          </div>
         </div>
       </div>
 
-      <!-- Full-width images -->
+      <!-- Full-width screenshots -->
       <div style="margin-top:24px; display:flex; flex-direction:column; gap:16px;">
         <div style="overflow:hidden; border-radius:16px;">
           <img loading="lazy" src="../images/Редактор тем 1.webp" alt="Редактор тем — экран 1" style="width:100%; max-width:100%; display:block;">
@@ -268,21 +276,28 @@
     document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
     // Lightbox
-    const preview  = document.getElementById('videoPreview');
     const lightbox = document.getElementById('videoLightbox');
     const lbVideo  = document.getElementById('lightboxVideo');
 
-    preview.addEventListener('click', () => {
-      lbVideo.src = '../video/dashboard.mp4';
+    function openLightbox(src) {
+      lbVideo.src = src;
       lightbox.classList.add('is-open');
       document.body.style.overflow = 'hidden';
-    });
+    }
 
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
       lbVideo.src = '';
     }
+
+    document.getElementById('videoPreview1').addEventListener('click', () => {
+      openLightbox('../video/Редактор тем/dashboard-new.mp4');
+    });
+
+    document.getElementById('videoPreview2').addEventListener('click', () => {
+      openLightbox('../video/Редактор тем/Old редактор.mp4');
+    });
 
     document.getElementById('lightboxBack').addEventListener('click', closeLightbox);
 
