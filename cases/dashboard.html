@@ -3,12 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Редактор тем дашборда — Дима Колесников</title>
-  
-  
+  <title>Редактор тем — Дима Колесников</title>
+
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../cases.css">
+
+  <style>
+    .video-preview-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-preview-wrap video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .video-preview-wrap:hover video { transform: scale(1.03); }
+
+    .video-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .video-badge { font-size: 10px; padding: 5px 10px; top: 8px; left: 8px; }
+    }
+
+    .video-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: rgba(10, 10, 18, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .video-lightbox.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .video-lightbox video {
+      max-width: min(88vw, 1200px);
+      max-height: 78vh;
+      border-radius: 16px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.45);
+      transform: scale(0.96);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .video-lightbox.is-open video { transform: scale(1); }
+
+    .lightbox-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lightbox-back {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 8px 16px 8px 12px;
+      cursor: pointer;
+      transition: background 0.15s;
+      letter-spacing: -0.01em;
+    }
+
+    .lightbox-back:hover { background: rgba(255,255,255,0.18); }
+
+    .lightbox-fullscreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.15s;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .lightbox-fullscreen:hover { background: rgba(255,255,255,0.18); }
+  </style>
 </head>
 <body>
 
@@ -27,74 +143,103 @@
     </button>
   </div>
 
+  <!-- HERO -->
   <section class="case-hero">
     <div class="blob blob--1"></div>
     <div class="blob blob--2"></div>
     <div class="blob blob--3"></div>
     <div class="case-hero-inner">
       <div class="case-eyebrow-pill">PIX Robotics · 2025 · Product Designer</div>
-      <h1 class="case-title">Дизайн инструмента для управления темами дашборда</h1>
+      <h1 class="case-title">Редизайн редактора тем в&nbsp;PIX BI</h1>
     </div>
   </section>
 
+  <!-- BODY -->
   <div class="case-page-body">
     <div class="case-container">
+
       <div class="case-grid-2">
 
-        <aside class="case-meta-card">
-          <div class="meta-row">
-            <span class="meta-label">Компания</span>
-            <span class="meta-value">PIX Robotics</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Год</span>
-            <span class="meta-value">2025</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Роль</span>
-            <span class="meta-value">Product Designer</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Направление</span>
-            <div class="meta-tags">
-              <span>Product Design</span>
-              <span>Design System</span>
+        <!-- Left column -->
+        <div class="case-sidebar">
+          <aside class="case-meta-card">
+            <div class="meta-row">
+              <span class="meta-label">Компания</span>
+              <span class="meta-value">PIX Robotics</span>
             </div>
-          </div>
-        </aside>
+            <div class="meta-row">
+              <span class="meta-label">Год</span>
+              <span class="meta-value">2025</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Роль</span>
+              <span class="meta-value">Product Designer</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Команды</span>
+              <div class="meta-tags">
+                <span>Разработка</span>
+                <span>Product Owner</span>
+                <span>Дизайн</span>
+                <span>QA</span>
+              </div>
+            </div>
+          </aside>
+        </div>
 
+        <!-- Content -->
         <div class="case-text">
 
           <div class="case-block">
-            <div class="case-block-eyebrow">Задача</div>
-            <h2>Брендинг без разработчика</h2>
-            <p>Каждый клиент PIX BI хотел кастомизировать внешний вид дашбордов под свой бренд: цвета, шрифты, стили компонентов. Раньше это делалось через правки CSS-файлов вручную — задача уходила к&nbsp;разработчику и&nbsp;занимала дни.</p>
-            <p>Нужен был интерфейс, который позволил бы менеджерам самостоятельно настраивать темы без технических знаний, с&nbsp;мгновенным предпросмотром.</p>
+            <h2>Задача</h2>
+            <p>Инструмент для кастомизации тем уже существовал, но настройка занимала много времени — не было предпросмотра, каждое изменение приходилось проверять вручную на&nbsp;реальном дашборде.</p>
           </div>
 
           <div class="case-block">
-            <div class="case-block-eyebrow">Решение</div>
-            <h2>Визуальный редактор тем</h2>
-            <p>Спроектировал панель управления темами с&nbsp;живым предпросмотром. Пользователь выбирает цвета из&nbsp;палитры или вводит HEX, настраивает типографику и&nbsp;видит изменения на&nbsp;реальном дашборде в&nbsp;режиме реального времени.</p>
-            <p>Разработал систему токенов дизайна: одно изменение базового цвета автоматически обновляет все зависимые элементы — кнопки, графики, заголовки.</p>
+            <h2>Решение</h2>
+            <p>Переработал редактор тем: добавил живое превью всех типов визуализаций и&nbsp;структурировал настройки по&nbsp;вкладкам. Пользователь видит результат сразу — без сохранения и&nbsp;лишних итераций.</p>
           </div>
 
           <div class="case-block is-result">
-            <div class="case-block-eyebrow">Результат</div>
-            <h2>Самостоятельность команд</h2>
-            <p>Клиенты начали брендировать дашборды самостоятельно. Количество задач на&nbsp;кастомизацию в&nbsp;бэклоге разработчиков сократилось на&nbsp;80%. Среднее время настройки темы — 15 минут вместо нескольких дней.</p>
-          </div>
-
-          <div class="case-cover-wrap case-cover-wrap--blue">
-            <img loading="lazy" src="../images/Редактор тем 1.webp" alt="Редактор тем дашборда">
-          </div>
-
-          <div class="case-cover-wrap case-cover-wrap--blue">
-            <img loading="lazy" src="../images/Редактор тем 2.webp" alt="Редактор тем — детали">
+            <h2>Результат</h2>
+            <p>После редизайна пользователи начали настраивать темы самостоятельно быстрее. По&nbsp;обратной связи от&nbsp;команды количество итераций при создании корпоративной темы заметно сократилось.</p>
           </div>
 
         </div>
       </div>
+
+      <!-- Full-width video -->
+      <div style="margin-top:48px; overflow:hidden; border-radius:16px;">
+        <div class="video-preview-wrap" id="videoPreview" style="max-width:100%;">
+          <span class="video-badge" style="background:rgba(113,81,255,0.75);">New Design</span>
+          <video src="../video/dashboard.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Full-width images -->
+      <div style="margin-top:24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="overflow:hidden; border-radius:16px;">
+          <img loading="lazy" src="../images/Редактор тем 1.webp" alt="Редактор тем — экран 1" style="width:100%; max-width:100%; display:block;">
+        </div>
+        <div style="overflow:hidden; border-radius:16px;">
+          <img loading="lazy" src="../images/Редактор тем 2.webp" alt="Редактор тем — экран 2" style="width:100%; max-width:100%; display:block;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="video-lightbox" id="videoLightbox">
+    <video id="lightboxVideo" autoplay muted loop playsinline></video>
+    <div class="lightbox-bar">
+      <button class="lightbox-back" id="lightboxBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
+      <button class="lightbox-fullscreen" id="lightboxFullscreen" title="Полный экран">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+      </button>
     </div>
   </div>
 
@@ -110,7 +255,7 @@
 
   <script>
     const html = document.documentElement;
-        const saved = localStorage.getItem('theme');
+    const saved = localStorage.getItem('theme');
     if (saved === 'light') html.removeAttribute('data-theme');
     else html.setAttribute('data-theme', 'dark');
 
@@ -121,6 +266,38 @@
     }
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
     document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
+
+    // Lightbox
+    const preview  = document.getElementById('videoPreview');
+    const lightbox = document.getElementById('videoLightbox');
+    const lbVideo  = document.getElementById('lightboxVideo');
+
+    preview.addEventListener('click', () => {
+      lbVideo.src = '../video/dashboard.mp4';
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      lbVideo.src = '';
+    }
+
+    document.getElementById('lightboxBack').addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lbVideo) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    document.getElementById('lightboxFullscreen').addEventListener('click', () => {
+      if (lbVideo.requestFullscreen) lbVideo.requestFullscreen();
+      else if (lbVideo.webkitRequestFullscreen) lbVideo.webkitRequestFullscreen();
+    });
   </script>
 </body>
 </html>
