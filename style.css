@@ -1115,7 +1115,7 @@ a.card-link {
   .cta-section { border-radius: 64px 64px 0 0; min-height: auto; padding: 48px 20px; }
   .cta-title-text { font-size: 28px; }
   .cta-title-pill { font-size: 28px; padding: 4px 18px; }
-  .cta-desc { font-size: 15px; }
+  .cta-desc { font-size: 13px; }
 
   /* Page bottom */
   .page-bottom-inner {
