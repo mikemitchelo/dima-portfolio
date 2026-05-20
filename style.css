@@ -1067,8 +1067,8 @@ a.card-link {
   .hero-location { display: none; }
 
   /* Hero typography */
-  .hero-header-row { flex-direction: row; gap: 10px; justify-content: center; flex-wrap: nowrap; }
-  .hero-emoji-dash { gap: 10px; }
+  .hero-header-row { justify-content: center; }
+  .hero-emoji-dash { display: none; }
   .hero-text,
   .hero-title-pill span { font-size: 32px; }
   .hero-title-pill { padding: 4px 16px; align-self: center; }
@@ -1346,7 +1346,6 @@ a.card-link {
   /* Hero */
   .hero-text,
   .hero-title-pill span { font-size: 26px; }
-  .hero-emoji { width: 26px; height: 26px; }
   .hero-header-row { gap: 6px; }
 
   /* Section headings */
