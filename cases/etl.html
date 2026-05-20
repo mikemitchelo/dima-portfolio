@@ -225,12 +225,25 @@
         </div>
       </div>
 
-      <div style="margin-top:24px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
-        <img src="../images/NEW%20ETL%20Screen%201.png" alt="New ETL screen 1" style="width:100%; border-radius:12px; display:block;">
-        <img src="../images/NEW%20ETL%20Screen%202.png" alt="New ETL screen 2" style="width:100%; border-radius:12px; display:block;">
-        <img src="../images/NEW%20ETL%20Screen%203.png" alt="New ETL screen 3" style="width:100%; border-radius:12px; display:block;">
+      <div class="case-cover-wrap" style="padding:24px; margin-top:24px;">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%;">
+          <img src="../images/NEW%20ETL%20Screen%201.png" alt="New ETL screen 1" class="etl-screen" style="width:100%; border-radius:8px; display:block; cursor:pointer;">
+          <img src="../images/NEW%20ETL%20Screen%202.png" alt="New ETL screen 2" class="etl-screen" style="width:100%; border-radius:8px; display:block; cursor:pointer;">
+          <img src="../images/NEW%20ETL%20Screen%203.png" alt="New ETL screen 3" class="etl-screen" style="width:100%; border-radius:8px; display:block; cursor:pointer;">
+        </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- Image lightbox -->
+  <div class="video-lightbox" id="imgLightbox">
+    <img id="lightboxImg" src="" alt="" style="max-width:min(92vw,1200px); max-height:82vh; border-radius:16px; box-shadow:0 40px 100px rgba(0,0,0,0.45); transform:scale(0.96); transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);">
+    <div class="lightbox-bar">
+      <button class="lightbox-back" id="imgLightboxBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
     </div>
   </div>
 
@@ -275,7 +288,28 @@
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
     document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
-    // Lightbox
+    // Image lightbox
+    const imgLightbox = document.getElementById('imgLightbox');
+    const lbImg       = document.getElementById('lightboxImg');
+
+    document.querySelectorAll('.etl-screen').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        imgLightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeImgLightbox() {
+      imgLightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('imgLightboxBack').addEventListener('click', closeImgLightbox);
+    imgLightbox.addEventListener('click', (e) => { if (e.target === imgLightbox || e.target === lbImg) closeImgLightbox(); });
+    imgLightbox.addEventListener('transitionend', () => { if (imgLightbox.classList.contains('is-open')) lbImg.style.transform = 'scale(1)'; else lbImg.style.transform = 'scale(0.96)'; });
+
+    // Video lightbox
     const lightbox  = document.getElementById('videoLightbox');
     const lbVideo   = document.getElementById('lightboxVideo');
     const lbBadge   = document.getElementById('lightboxBadge');
@@ -309,7 +343,7 @@
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') { closeLightbox(); closeImgLightbox(); }
     });
 
     document.getElementById('lightboxFullscreen').addEventListener('click', () => {
