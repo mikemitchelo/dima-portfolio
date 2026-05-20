@@ -4,11 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ETL в PIX BI — Дима Колесников</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../cases.css">
+
+  <style>
+    /* --- Preview --- */
+    .video-preview-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-preview-wrap video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .video-preview-wrap:hover video { transform: scale(1.03); }
+
+    .video-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      pointer-events: none;
+    }
+
+    /* --- Lightbox --- */
+    .video-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: rgba(10, 10, 18, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .video-lightbox.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .video-lightbox video {
+      max-width: min(88vw, 1200px);
+      max-height: 78vh;
+      border-radius: 16px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.45);
+      transform: scale(0.96);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .video-lightbox.is-open video { transform: scale(1); }
+
+    .lightbox-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lightbox-back {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 8px 16px 8px 12px;
+      cursor: pointer;
+      transition: background 0.15s;
+      letter-spacing: -0.01em;
+    }
+
+    .lightbox-back:hover { background: rgba(255,255,255,0.18); }
+
+    .lightbox-fullscreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.15s;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .lightbox-fullscreen:hover { background: rgba(255,255,255,0.18); }
+  </style>
 </head>
 <body>
 
@@ -67,31 +182,45 @@
         <div class="case-text">
 
           <div class="case-block">
-            <div class="case-block-eyebrow">Задача</div>
-            <h2>Аналитика без кода</h2>
+            <h2>Задача</h2>
             <p>Аналитики и&nbsp;дата-инженеры тратили часы на&nbsp;настройку ETL-пайплайнов через SQL и&nbsp;скрипты. Каждое изменение требовало участия разработчика, а&nbsp;бизнес-пользователи были полностью исключены из&nbsp;процесса.</p>
             <p>Нужен был инструмент, который позволил бы настраивать сложные потоки данных без технической подготовки — и&nbsp;вписывался в&nbsp;существующую BI-платформу.</p>
           </div>
 
           <div class="case-block">
-            <div class="case-block-eyebrow">Решение</div>
-            <h2>Визуальный конструктор связей</h2>
+            <h2>Решение</h2>
             <p>Спроектировал drag-and-drop интерфейс для создания ETL-пайплайнов. Пользователь соединяет источники данных, трансформации и&nbsp;выгрузки визуальными блоками — без единой строки кода.</p>
             <p>Разработал систему валидации в&nbsp;реальном времени: ошибки конфигурации видны сразу, до&nbsp;запуска пайплайна. Сложные модели данных стали читаемыми схемами.</p>
           </div>
 
           <div class="case-block is-result">
-            <div class="case-block-eyebrow">Результат</div>
-            <h2>Скорость и&nbsp;доступность</h2>
+            <h2>Результат</h2>
             <p>Время настройки типового пайплайна сократилось в&nbsp;3 раза. Инструментом начали пользоваться аналитики без технического бэкграунда — задачи перестали накапливаться в&nbsp;очереди к&nbsp;разработчикам.</p>
           </div>
 
-          <div class="case-cover-wrap">
-            <img src="../images/ETL.png" alt="ETL конструктор в PIX BI">
+          <div class="case-cover-wrap" style="padding:0; border-radius:16px;">
+            <div class="video-preview-wrap" id="videoPreview">
+              <span class="video-badge">AS IS</span>
+              <video src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
+            </div>
           </div>
 
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="video-lightbox" id="videoLightbox">
+    <video id="lightboxVideo" src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
+    <div class="lightbox-bar">
+      <button class="lightbox-back" id="lightboxBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
+      <button class="lightbox-fullscreen" id="lightboxFullscreen" title="Полный экран">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+      </button>
     </div>
   </div>
 
@@ -115,6 +244,36 @@
       const isDark = html.getAttribute('data-theme') === 'dark';
       if (isDark) { html.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); }
       else { html.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); }
+    });
+
+    // Lightbox
+    const preview  = document.getElementById('videoPreview');
+    const lightbox = document.getElementById('videoLightbox');
+    const lbVideo  = document.getElementById('lightboxVideo');
+
+    preview.addEventListener('click', () => {
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightboxBack').addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    document.getElementById('lightboxFullscreen').addEventListener('click', () => {
+      if (lbVideo.requestFullscreen) lbVideo.requestFullscreen();
+      else if (lbVideo.webkitRequestFullscreen) lbVideo.webkitRequestFullscreen();
     });
   </script>
 </body>

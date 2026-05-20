@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Дима Колесников — Продуктовый дизайнер</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="tab-menu">
-    <a href="#cases" class="nav-link">Кейсы</a>
-    <a href="#about" class="nav-link">О себе</a>
-    <a href="#experience" class="nav-link">Опыт</a>
-    <div class="nav-divider"></div>
-    <a href="https://drive.google.com/file/d/1CqAja37Eo5lDWBlTloKPhl8Gios4nPJc/view?usp=sharing" class="nav-link" target="_blank">CV</a>
-    <a href="https://t.me/mike_mitchelo" class="nav-btn" target="_blank">Контакты</a>
-    <div class="nav-divider"></div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+  <div class="nav-wrap">
+    <nav class="tab-menu">
+      <a href="#cases" class="nav-link nav-link--mobile">Кейсы</a>
+      <a href="#about" class="nav-link">О себе</a>
+      <a href="#experience" class="nav-link">Опыт</a>
+      <div class="nav-divider"></div>
+      <a href="https://drive.google.com/file/d/1CqAja37Eo5lDWBlTloKPhl8Gios4nPJc/view?usp=sharing" class="nav-link nav-link--mobile" target="_blank">CV</a>
+      <a href="https://t.me/mike_mitchelo" class="nav-btn" target="_blank">Контакты</a>
+    </nav>
+    <button class="theme-toggle theme-toggle--mobile" id="themeToggleMobile" aria-label="Переключить тему">
       <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
       </svg>
@@ -28,7 +29,7 @@
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
       </svg>
     </button>
-  </nav>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -40,7 +41,7 @@
       <div class="hero-header-row">
         <span class="hero-text">Привет, я Дима</span>
         <span class="hero-emoji-dash">
-          <img src="images/Дима глав.png" alt="" class="hero-emoji">
+          <img src="images/Дима глав.webp" alt="" class="hero-emoji">
           <span class="hero-text">—</span>
         </span>
       </div>
@@ -76,7 +77,7 @@
       <a href="cases/etl.html" class="card-link">
       <article class="case-card case-card--featured fade-in">
         <div class="featured-img-area">
-          <img src="images/ETL.png" alt="PIX BI платформа">
+          <img src="images/ETL.webp" alt="PIX BI платформа">
         </div>
         <div class="card-content">
           <div class="card-meta">
@@ -85,13 +86,15 @@
             <span class="meta-role">Product Designer</span>
           </div>
           <div class="card-body">
-            <h3 class="card-title">Проектирование ETL в PIX BI</h3>
-            <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки сложных моделей данных, превратив техническую настройку в&nbsp;понятную интерактивную схему.</p>
+            <h3 class="card-title">Рефакторинг ETL-редактора в PIX BI</h3>
+            <p class="card-desc">Переработал интерфейс в&nbsp;трёхзонный светлый с&nbsp;чёткой иерархией. Разделил панель подключения, SQL-редактор и&nbsp;превью данных — технический инструмент стал читаемым без документации.</p>
           </div>
           <div class="card-tags">
-            <span class="tag">Product Design</span>
+            <span class="tag">B2B</span>
+            <span class="tag">Redesign</span>
+            <span class="tag">Data Tools</span>
             <span class="tag">Design System</span>
-            <span class="tag">UX Research</span>
+            <span class="tag">User Research</span>
           </div>
         </div>
       </article>
@@ -103,8 +106,8 @@
         <a href="cases/dashboard.html" class="card-link">
         <article class="case-card case-card--blue">
           <div class="card-img-area card-img-area--dashboard">
-            <img src="images/Редактор тем 1.png" alt="" class="abs-img dash-img-1">
-            <img src="images/Редактор тем 2.png" alt="" class="abs-img dash-img-2">
+            <img src="images/Редактор тем 1.webp" alt="" class="abs-img dash-img-1" loading="lazy">
+            <img src="images/Редактор тем 2.webp" alt="" class="abs-img dash-img-2" loading="lazy">
           </div>
           <div class="card-content">
             <div class="card-meta">
@@ -113,13 +116,14 @@
               <span class="meta-role">Product Designer</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Дизайн инструмента для управления темами дашборда</h3>
-              <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code.</p>
+              <h3 class="card-title">Редизайн редактора тем в PIX BI</h3>
+              <p class="card-desc">Сократил время создания корпоративной темы: убрал слепую настройку через добавление живого превью визуализаций и&nbsp;структурированных вкладок по&nbsp;зонам редактирования.</p>
             </div>
             <div class="card-tags">
               <span class="tag">Product Design</span>
-              <span class="tag">Design System</span>
-              <span class="tag">UX Research</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Competitor Analysis</span>
+              <span class="tag">B2B</span>
             </div>
           </div>
         </article>
@@ -140,17 +144,18 @@
               </div>
               <div class="card-body">
                 <h3 class="card-title">Редизайн сайта PIX Академия</h3>
-                <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки сложных моделей данных.</p>
+                <p class="card-desc">Сайт выглядел устаревшим и&nbsp;не конвертировал в&nbsp;пользователей продуктов. Инициировал редизайн: провёл конкурентный анализ, согласовал с&nbsp;маркетингом и&nbsp;переработал структуру под три сегмента ЦА. Сайт передан в&nbsp;разработку.</p>
               </div>
               <div class="card-tags">
-                <span class="tag">Product Design</span>
-                <span class="tag">Design System</span>
+                <span class="tag">Web Design</span>
+                <span class="tag">Competitor Analysis</span>
                 <span class="tag">UX Research</span>
+                <span class="tag">B2C</span>
               </div>
             </div>
           </article>
-          <img src="images/Пикс акад.png" alt="" class="float-img float-img--1">
-          <img src="images/Пикс акад 2.png" alt="" class="float-img float-img--2">
+          <img src="images/Пикс акад.webp" alt="" class="float-img float-img--1" loading="lazy">
+          <img src="images/Пикс акад 2.webp" alt="" class="float-img float-img--2" loading="lazy">
         </div>
         </a>
       </div>
@@ -161,8 +166,8 @@
         <a href="cases/bookmarks.html" class="card-link">
         <article class="case-card case-card--blue">
           <div class="card-img-area card-img-area--mobile">
-            <img src="images/Заклдаки 1.png" alt="" class="abs-img mob-img-1">
-            <img src="images/Закладки 2.png" alt="" class="abs-img mob-img-2">
+            <img src="images/Заклдаки 1.webp" alt="" class="abs-img mob-img-1" loading="lazy">
+            <img src="images/Закладки 2.webp" alt="" class="abs-img mob-img-2" loading="lazy">
           </div>
           <div class="card-content">
             <div class="card-meta">
@@ -172,12 +177,13 @@
             </div>
             <div class="card-body">
               <h3 class="card-title">Рефакторинг панели закладок</h3>
-              <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки сложных моделей данных.</p>
+              <p class="card-desc">Аналитика показала низкое использование закладок. Переработал механику: сократил шаги создания, разделил на личные и&nbsp;общие, добавил онбординг для новых пользователей.</p>
             </div>
             <div class="card-tags">
               <span class="tag">Product Design</span>
-              <span class="tag">Design System</span>
-              <span class="tag">UX Research</span>
+              <span class="tag">User Research</span>
+              <span class="tag">B2B</span>
+              <span class="tag">Data Tools</span>
             </div>
           </div>
         </article>
@@ -187,9 +193,9 @@
         <a href="cases/plant-pal.html" class="card-link">
         <article class="case-card case-card--green">
           <div class="card-img-area card-img-area--plant">
-            <img src="images/Плант 1.png" alt="" class="plant-img plant-img--1">
-            <img src="images/Плант 2.png" alt="" class="plant-img plant-img--2">
-            <img src="images/Плант 1.png" alt="" class="plant-img plant-img--3">
+            <img src="images/Плант 1.webp" alt="" class="plant-img plant-img--1" loading="lazy">
+            <img src="images/Плант 2.webp" alt="" class="plant-img plant-img--2" loading="lazy">
+            <img src="images/Плант 1.webp" alt="" class="plant-img plant-img--3" loading="lazy">
           </div>
           <div class="card-content">
             <div class="card-meta">
@@ -198,13 +204,14 @@
               <span class="meta-role">UX/UI</span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Дизайн приложения Plant pal</h3>
-              <p class="card-desc">Спроектировал визуальный конструктор для обработки данных и&nbsp;настройки связей в&nbsp;режиме No-code. Упростил процесс сборки.</p>
+              <h3 class="card-title">Дизайн приложения Plant Pal</h3>
+              <p class="card-desc">Учебный проект: мобильное приложение для ухода за растениями. Провёл полный цикл — интервью, JTBD, user stories, конкурентный анализ, вайрфреймы, финальный дизайн.</p>
             </div>
             <div class="card-tags">
-              <span class="tag">Product Design</span>
-              <span class="tag">Design System</span>
+              <span class="tag">Mobile Design</span>
               <span class="tag">UX Research</span>
+              <span class="tag">JTBD</span>
+              <span class="tag">Pet Project</span>
             </div>
           </div>
         </article>
@@ -226,23 +233,23 @@
           <span class="heading-text">Три вещи, в&nbsp;которых</span>
           <span class="heading-pill">я сильнее всего</span>
         </h2>
-        <p class="section-desc" style="max-width: 524px;">Ключевые кейсы и&nbsp;личные фавориты. Мобильный концепт добавил не&nbsp;ради UI, а&nbsp;для демонстрации дизайн-процесса, который я&nbsp;развиваю и&nbsp;адаптирую под новые задачи ежедневно.</p>
+        <p class="section-desc" style="max-width: 524px;">Интересуюсь всем вокруг, слежу за трендами и&nbsp;чужими решениями, разбираю что работает и&nbsp;почему — стараюсь вырасти в&nbsp;крутого спеца.</p>
       </div>
 
       <div class="skills-grid fade-in">
         <div class="skill-col">
           <h3 class="skill-title">Продуктовый дизайн</h3>
-          <p class="skill-desc">Проектирую интерфейсы B2B-систем: от product discovery до handoff. Работаю с&nbsp;метриками — не&nbsp;«красиво», а&nbsp;«работает».</p>
+          <p class="skill-desc">Проектирую интерфейсы: разбираюсь в&nbsp;задаче, предлагаю решения и&nbsp;довожу до&nbsp;финального дизайна.</p>
           <div class="skill-tags">
-            <span class="tag tag--purple">JTBD</span>
-            <span class="tag tag--purple">User stories</span>
             <span class="tag tag--purple">Wireframes</span>
             <span class="tag tag--purple">Prototyping</span>
+            <span class="tag tag--purple">Flows</span>
+            <span class="tag tag--purple">B2B</span>
           </div>
         </div>
         <div class="skill-col skill-col--bordered">
           <h3 class="skill-title">Дизайн-системы</h3>
-          <p class="skill-desc">Проектирую интерфейсы B2B-систем: от product discovery до handoff. Работаю с&nbsp;метриками — не&nbsp;«красиво», а&nbsp;«работает».</p>
+          <p class="skill-desc">Выстраиваю компонентную базу с&nbsp;токенами, слежу за консистентностью через Design QA и&nbsp;handoff в&nbsp;Devmode.</p>
           <div class="skill-tags">
             <span class="tag tag--purple">Tokens</span>
             <span class="tag tag--purple">Components</span>
@@ -252,11 +259,12 @@
         </div>
         <div class="skill-col">
           <h3 class="skill-title">Исследования</h3>
-          <p class="skill-desc">Проектирую интерфейсы B2B-систем: от product discovery до handoff. Работаю с&nbsp;метриками — не&nbsp;«красиво», а&nbsp;«работает».</p>
+          <p class="skill-desc">Провожу интервью и&nbsp;юзабилити-тесты, нахожу точки боли и&nbsp;превращаю их в&nbsp;конкретные решения.</p>
           <div class="skill-tags">
             <span class="tag tag--purple">Interviews</span>
             <span class="tag tag--purple">Usability</span>
-            <span class="tag tag--purple">CSAT/CES/NPS</span>
+            <span class="tag tag--purple">JTBD</span>
+            <span class="tag tag--purple">User stories</span>
           </div>
         </div>
       </div>
@@ -283,62 +291,62 @@
 
       <div class="timeline fade-in">
         <div class="timeline-item">
-          <div class="timeline-left">
-            <span class="timeline-date">2025 — сейчас</span>
-            <div class="timeline-detail">
+          <span class="timeline-date">март 2025 — сейчас</span>
+          <div class="timeline-detail">
+            <div class="timeline-header">
               <h3 class="timeline-company">PIX Robotics</h3>
-              <p class="timeline-text">BI-платформа, дизайн-система, проектирование сложных аналитических интерфейсов. Работаю над&nbsp;структурой продукта целиком.</p>
+              <span class="timeline-role">Product Designer</span>
             </div>
+            <p class="timeline-text">Веду продуктовый дизайн BI-платформы: от исследований до финального интерфейса. Рефакторю сложные инструменты, развиваю дизайн-систему и&nbsp;инициирую улучшения на&nbsp;основе данных.</p>
           </div>
-          <span class="timeline-role">Product Designer</span>
         </div>
         <div class="timeline-divider"></div>
 
         <div class="timeline-item">
-          <div class="timeline-left">
-            <span class="timeline-date">2025 — сейчас</span>
-            <div class="timeline-detail">
+          <span class="timeline-date">апр. 2023 — янв. 2025</span>
+          <div class="timeline-detail">
+            <div class="timeline-header">
               <h3 class="timeline-company">ТОТО</h3>
-              <p class="timeline-text">Графика, баннеры, иконки, поддержка старших дизайнеров. Подготовка макетов под печать и&nbsp;веб.</p>
+              <span class="timeline-role">Intern Designer</span>
             </div>
+            <p class="timeline-text">Отвечал за качество макетов на&nbsp;всём пути до печати: проверка, препресс, сопровождение в&nbsp;типографии. Делал баннеры, иконки, веб-графику.</p>
           </div>
-          <span class="timeline-role">Intern designer</span>
         </div>
         <div class="timeline-divider"></div>
 
         <div class="timeline-item">
-          <div class="timeline-left">
-            <span class="timeline-date">2025 — сейчас</span>
-            <div class="timeline-detail">
+          <span class="timeline-date">май 2023</span>
+          <div class="timeline-detail">
+            <div class="timeline-header">
               <h3 class="timeline-company">WannaBe</h3>
-              <p class="timeline-text">BI-платформа, дизайн-система, проектирование сложных аналитических интерфейсов. Работаю над&nbsp;структурой продукта целиком.</p>
+              <span class="timeline-role timeline-role--edu">Курс UX/UI</span>
             </div>
+            <p class="timeline-text">Освоил продуктовый подход: JTBD, user stories, исследования, прототипирование от идеи до финального макета.</p>
           </div>
-          <span class="timeline-role">Курс UX/UI</span>
         </div>
         <div class="timeline-divider"></div>
 
         <div class="timeline-item">
-          <div class="timeline-left">
-            <span class="timeline-date">2025 — сейчас</span>
-            <div class="timeline-detail">
+          <span class="timeline-date">фев. 2022</span>
+          <div class="timeline-detail">
+            <div class="timeline-header">
               <h3 class="timeline-company">Яндекс.Практикум</h3>
-              <p class="timeline-text">Базовые навыки UX/UI, прототипирование, работа с&nbsp;Figma.</p>
+              <span class="timeline-role timeline-role--edu">Курс UX/UI</span>
             </div>
+            <p class="timeline-text">Фундамент в&nbsp;UX/UI: принципы проектирования, Figma, работа с&nbsp;пользовательскими сценариями.</p>
           </div>
-          <span class="timeline-role">Курс UX/UI</span>
         </div>
         <div class="timeline-divider"></div>
 
         <div class="timeline-item">
-          <div class="timeline-left">
-            <span class="timeline-date">2025 — сейчас</span>
-            <div class="timeline-detail">
+          <span class="timeline-date">сен. 2014 — авг. 2018</span>
+          <div class="timeline-detail">
+            <div class="timeline-header">
               <h3 class="timeline-company">РГСУ</h3>
-              <p class="timeline-text">Бакалавриат. Международное и&nbsp;конституционное право. Учит структурно мыслить — и&nbsp;это пригодилось в&nbsp;дизайне.</p>
+              <span class="timeline-role timeline-role--edu">Бакалавриат</span>
             </div>
+            <p class="timeline-text">Юриспруденция научила работать с&nbsp;большим объёмом информации, выстраивать логику и&nbsp;защищать решения — это прямо применяется в&nbsp;дизайне.</p>
           </div>
-          <span class="timeline-role">Курс UX/UI</span>
         </div>
       </div>
     </div>
@@ -380,12 +388,11 @@
   <script>
     // Theme toggle
     const html = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
     const saved = localStorage.getItem('theme');
     if (saved === 'light') html.removeAttribute('data-theme');
     else html.setAttribute('data-theme', 'dark');
 
-    toggle.addEventListener('click', () => {
+    function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
       if (isDark) {
         html.removeAttribute('data-theme');
@@ -394,7 +401,9 @@
         html.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
       }
-    });
+    }
+
+    document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
   </script>
 
   <script>
@@ -451,6 +460,7 @@
       checkOnLoad();
     }
     window.addEventListener('load', checkOnLoad);
+
   </script>
 
 </body>

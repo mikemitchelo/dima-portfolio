@@ -1,5 +1,8 @@
 /* ===== CASE PAGE ===== */
 
+/* Body bg matches case-page-body so hero rounded corners read cleanly */
+[data-theme="dark"] body { background: #111318; }
+
 /* --- Hero (тёмный в обеих темах, как .hero на главной) --- */
 .case-hero {
   position: relative;
@@ -112,7 +115,7 @@
 .case-meta-card .meta-row {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   padding: 16px 0;
   border-bottom: 1px solid rgba(130, 147, 171, 0.3);
 }
@@ -132,14 +135,14 @@
   font-size: 15px;
   font-weight: 400;
   color: #141414;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.24px;
   line-height: 1.45;
 }
 
 .case-meta-card .meta-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin-top: 4px;
 }
 
@@ -149,15 +152,16 @@
   padding: 4px 10px;
   border-radius: 999px;
   color: #737373;
-  border: 1px solid rgba(130, 147, 171, 0.3);
+  border: 1px solid #ded9e9;
   white-space: nowrap;
+  letter-spacing: -0.24px;
 }
 
 /* --- Content blocks --- */
 .case-text {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 64px;
 }
 
 .case-block-eyebrow {
@@ -191,11 +195,11 @@
 }
 
 .case-block p {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
   color: #737373;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.24px;
   margin-bottom: 12px;
 }
 
@@ -205,7 +209,7 @@
   display: inline-block;
   background: #c0ace0;
   color: #141414;
-  padding: 0.04em 0.4em 0.1em;
+  padding: 4px 20px 6px;
   border-radius: 60px;
 }
 
@@ -235,7 +239,7 @@
 [data-theme="dark"] .case-hero { background: #06081a; }
 
 /* Body */
-[data-theme="dark"] .case-page-body { background: #0a0c0f; }
+[data-theme="dark"] .case-page-body { background: #111318; }
 
 /* Cover wraps — зеркалят карточки кейсов на главной */
 [data-theme="dark"] .case-cover-wrap             { background: #1e1b2e; }
@@ -255,7 +259,7 @@
 [data-theme="dark"] .case-meta-card .meta-tags span {
   color: #8a8a9a;
   border-color: rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.04);
+  background: transparent;
 }
 
 /* Content blocks */
