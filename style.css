@@ -1019,7 +1019,7 @@ a.card-link {
   /* Таб на кейс-страницах и nav-wrap на главной — оба внизу */
   .tab-menu {
     top: auto;
-    bottom: calc(16px + env(safe-area-inset-bottom));
+    bottom: 12px;
     gap: 4px;
     padding: 8px;
   }
@@ -1027,7 +1027,7 @@ a.card-link {
   /* nav-wrap на главной */
   .nav-wrap {
     top: auto;
-    bottom: calc(16px + env(safe-area-inset-bottom));
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
     gap: 8px;
