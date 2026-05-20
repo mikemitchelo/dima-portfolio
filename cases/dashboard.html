@@ -226,18 +226,37 @@
 
       <!-- Full-width screenshots -->
       <div style="margin-top:24px; display:flex; flex-direction:column; gap:16px;">
-        <div style="overflow:hidden; border-radius:16px;">
+        <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
           <img loading="lazy" src="../images/Редактор тем/Редактор тем Cover-web.png" alt="Редактор тем — обложка 1" style="width:100%; max-width:100%; display:block;">
+          <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
+            <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
+            <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
+          </div>
         </div>
-        <div style="overflow:hidden; border-radius:16px;">
+        <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
           <img loading="lazy" src="../images/Редактор тем/Редактор тем Cover 1-web.png" alt="Редактор тем — обложка 2" style="width:100%; max-width:100%; display:block;">
+          <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
+            <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
+            <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Lightbox -->
+  <!-- Image lightbox -->
+  <div class="video-lightbox" id="imgLightbox">
+    <img id="lightboxImg" src="" alt="" style="max-width:min(92vw,1200px); max-height:82vh; border-radius:16px; box-shadow:0 40px 100px rgba(0,0,0,0.45);">
+    <div class="lightbox-bar">
+      <button class="lightbox-back" id="imgLightboxBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Назад
+      </button>
+    </div>
+  </div>
+
+  <!-- Video lightbox -->
   <div class="video-lightbox" id="videoLightbox">
     <video id="lightboxVideo" autoplay muted loop playsinline></video>
     <div class="lightbox-bar">
@@ -275,7 +294,27 @@
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
     document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
-    // Lightbox
+    // Image lightbox
+    const imgLightbox = document.getElementById('imgLightbox');
+    const lbImg = document.getElementById('lightboxImg');
+
+    document.querySelectorAll('.dash-screen-wrap').forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        lbImg.src = wrap.querySelector('img').src;
+        imgLightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeImgLightbox() {
+      imgLightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('imgLightboxBack').addEventListener('click', closeImgLightbox);
+    imgLightbox.addEventListener('click', (e) => { if (e.target === imgLightbox || e.target === lbImg) closeImgLightbox(); });
+
+    // Video lightbox
     const lightbox = document.getElementById('videoLightbox');
     const lbVideo  = document.getElementById('lightboxVideo');
 
@@ -306,7 +345,7 @@
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') { closeLightbox(); closeImgLightbox(); }
     });
 
     document.getElementById('lightboxFullscreen').addEventListener('click', () => {
