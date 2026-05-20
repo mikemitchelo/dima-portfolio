@@ -36,7 +36,7 @@
       top: 14px;
       left: 14px;
       z-index: 2;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -44,7 +44,7 @@
       background: rgba(0,0,0,0.55);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      padding: 5px 12px;
+      padding: 8px 18px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.15);
       pointer-events: none;
@@ -160,65 +160,73 @@
       <!-- Grid: sidebar + content -->
       <div class="case-grid-2">
 
-        <!-- Sticky meta card -->
-        <aside class="case-meta-card">
-          <div class="meta-row">
-            <span class="meta-label">Компания</span>
-            <span class="meta-value">PIX Robotics</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Год</span>
-            <span class="meta-value">2025</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Роль</span>
-            <span class="meta-value">Product Designer</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Направление</span>
-            <div class="meta-tags">
-              <span>Product Design</span>
-              <span>Design System</span>
-              <span>UX Research</span>
+        <!-- Left column: meta card + video -->
+        <div class="case-sidebar">
+          <aside class="case-meta-card">
+            <div class="meta-row">
+              <span class="meta-label">Компания</span>
+              <span class="meta-value">PIX Robotics</span>
             </div>
-          </div>
-        </aside>
+            <div class="meta-row">
+              <span class="meta-label">Год</span>
+              <span class="meta-value">2025</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Роль</span>
+              <span class="meta-value">Product Designer</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Команды</span>
+              <div class="meta-tags">
+                <span>Разработка</span>
+                <span>Аналитика</span>
+                <span>Product Owner</span>
+                <span>Дизайн</span>
+                <span>QA</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
 
         <!-- Content -->
         <div class="case-text">
 
           <div class="case-block">
             <h2>Задача</h2>
-            <p>Аналитики и&nbsp;дата-инженеры тратили часы на&nbsp;настройку ETL-пайплайнов через SQL и&nbsp;скрипты. Каждое изменение требовало участия разработчика, а&nbsp;бизнес-пользователи были полностью исключены из&nbsp;процесса.</p>
-            <p>Нужен был инструмент, который позволил бы настраивать сложные потоки данных без технической подготовки — и&nbsp;вписывался в&nbsp;существующую BI-платформу.</p>
+            <p>Аналитики и&nbsp;дата-инженеры тратили время на&nbsp;настройку ETL-пайплайнов — процесс был сложным и&nbsp;требовал участия разработчика. Бизнес-пользователи были полностью исключены из&nbsp;процесса.</p>
           </div>
 
           <div class="case-block">
             <h2>Решение</h2>
-            <p>Спроектировал drag-and-drop интерфейс для создания ETL-пайплайнов. Пользователь соединяет источники данных, трансформации и&nbsp;выгрузки визуальными блоками — без единой строки кода.</p>
-            <p>Разработал систему валидации в&nbsp;реальном времени: ошибки конфигурации видны сразу, до&nbsp;запуска пайплайна. Сложные модели данных стали читаемыми схемами.</p>
+            <p>Переработал интерфейс ETL-редактора: разделил на&nbsp;три чётких зоны, упростил механику взаимодействия со&nbsp;столбцами и&nbsp;добавил типизацию данных. Сложный технический инструмент стал читаемым без документации.</p>
           </div>
 
           <div class="case-block is-result">
             <h2>Результат</h2>
-            <p>Время настройки типового пайплайна сократилось в&nbsp;3 раза. Инструментом начали пользоваться аналитики без технического бэкграунда — задачи перестали накапливаться в&nbsp;очереди к&nbsp;разработчикам.</p>
-          </div>
-
-          <div class="case-cover-wrap" style="padding:0; border-radius:16px;">
-            <div class="video-preview-wrap" id="videoPreview">
-              <span class="video-badge">AS IS</span>
-              <video src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
-            </div>
+            <p>После повторных сессий пользователи отметили, что интерфейс стал понятен без документации. Аналитики начали самостоятельно настраивать источники без обращений к&nbsp;разработчикам.</p>
           </div>
 
         </div>
       </div>
+
+      <div style="margin-top:48px; overflow:hidden; border-radius:16px;">
+        <div class="video-preview-wrap" id="videoPreview" style="max-width:100%;">
+          <span class="video-badge">AS IS</span>
+          <video src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <!-- Lightbox -->
   <div class="video-lightbox" id="videoLightbox">
-    <video id="lightboxVideo" src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
+    <div style="position:relative; display:inline-flex;">
+      <video id="lightboxVideo" src="../video/Old%20ETL.mp4?v=2" autoplay muted loop playsinline></video>
+      <span class="video-badge">AS IS</span>
+    </div>
+    </div>
     <div class="lightbox-bar">
       <button class="lightbox-back" id="lightboxBack">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
