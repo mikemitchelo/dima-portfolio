@@ -375,6 +375,7 @@
     document.getElementById('lightboxFullscreen').addEventListener('click', () => {
       if (lbVideo.requestFullscreen) lbVideo.requestFullscreen();
       else if (lbVideo.webkitRequestFullscreen) lbVideo.webkitRequestFullscreen();
+      else if (lbVideo.webkitEnterFullscreen) lbVideo.webkitEnterFullscreen();
     });
   </script>
 </body>
