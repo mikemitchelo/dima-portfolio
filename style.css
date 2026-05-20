@@ -1012,14 +1012,14 @@ a.card-link {
 }
 
 @media (max-width: 768px) {
-  body { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+  body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
 
   .container { padding: 0 24px; }
 
   /* Таб на кейс-страницах и nav-wrap на главной — оба внизу */
   .tab-menu {
     top: auto;
-    bottom: calc(32px + env(safe-area-inset-bottom));
+    bottom: calc(16px + env(safe-area-inset-bottom));
     gap: 4px;
     padding: 8px;
   }
@@ -1027,7 +1027,7 @@ a.card-link {
   /* nav-wrap на главной */
   .nav-wrap {
     top: auto;
-    bottom: calc(32px + env(safe-area-inset-bottom));
+    bottom: calc(16px + env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%);
     gap: 8px;
