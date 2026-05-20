@@ -10,6 +10,17 @@
   <link rel="stylesheet" href="../cases.css">
 
   <style>
+    .dash-screen-wrap {
+      border: 1px solid rgba(130, 147, 171, 0.2);
+    }
+    [data-theme="dark"] .dash-screen-wrap {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .dash-screen-wrap img {
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .dash-screen-wrap:hover img { transform: scale(1.03); }
+
     .video-preview-wrap {
       position: relative;
       width: 100%;
@@ -227,14 +238,28 @@
       <!-- Full-width screenshots -->
       <div style="margin-top:24px; display:flex; flex-direction:column; gap:16px;">
         <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
-          <img loading="lazy" src="../images/Редактор тем/Редактор тем Cover-web.webp" alt="Редактор тем — обложка 1" style="width:100%; max-width:100%; display:block;">
+          <img loading="lazy" src="../images/Редактор тем/Редактор тем Cover.png" alt="Редактор тем — Cover" style="width:100%; max-width:100%; display:block;">
           <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
             <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
             <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
           </div>
         </div>
         <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
-          <img loading="lazy" src="../images/Редактор тем/Редактор тем Cover 1-web.webp" alt="Редактор тем — обложка 2" style="width:100%; max-width:100%; display:block;">
+          <img loading="lazy" src="../images/Редактор тем/Редактор тем Cover 1.png" alt="Редактор тем — Cover 1" style="width:100%; max-width:100%; display:block;">
+          <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
+            <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
+            <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
+          </div>
+        </div>
+        <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
+          <img loading="lazy" src="../images/Редактор тем/Редактор тем screenshot 1.png" alt="Редактор тем — screenshot 1" style="width:100%; max-width:100%; display:block;">
+          <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
+            <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
+            <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
+          </div>
+        </div>
+        <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
+          <img loading="lazy" src="../images/Редактор тем/Редактор тем screenshot 2.png" alt="Редактор тем — screenshot 2" style="width:100%; max-width:100%; display:block;">
           <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
             <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
             <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
@@ -313,7 +338,6 @@
 
     document.getElementById('imgLightboxBack').addEventListener('click', closeImgLightbox);
     imgLightbox.addEventListener('click', (e) => { if (e.target === imgLightbox || e.target === lbImg) closeImgLightbox(); });
-
     // Video lightbox
     const lightbox = document.getElementById('videoLightbox');
     const lbVideo  = document.getElementById('lightboxVideo');
