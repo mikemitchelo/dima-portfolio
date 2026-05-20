@@ -1063,17 +1063,17 @@ a.card-link {
   .nav-link--mobile { padding: 12px 16px; font-size: 15px; }
   .nav-btn { padding: 12px 20px; }
 
-  .hero { border-radius: 0 0 24px 24px; min-height: 50svh; }
+  .hero { border-radius: 0 0 44px 44px; min-height: 50svh; }
   .hero-location { display: none; }
 
   /* Hero typography */
   .hero-header-row { flex-direction: row; gap: 10px; justify-content: center; flex-wrap: nowrap; }
   .hero-emoji-dash { gap: 10px; }
   .hero-text,
-  .hero-title-pill span { font-size: 26px; }
-  .hero-title-pill { padding: 4px 14px; align-self: center; }
-  .hero-emoji { width: 28px; height: 28px; }
-  .hero-desc { font-size: 14px; }
+  .hero-title-pill span { font-size: 32px; }
+  .hero-title-pill { padding: 4px 16px; align-self: center; }
+  .hero-emoji { width: 32px; height: 32px; }
+  .hero-desc { font-size: 13px; }
   .hero-content { gap: 12px; }
 
   .section { padding: 40px 0; }
@@ -1112,7 +1112,7 @@ a.card-link {
   .timeline-item { gap: 16px; }
 
   /* CTA */
-  .cta-section { border-radius: 24px 24px 0 0; min-height: auto; padding: 64px 20px; }
+  .cta-section { border-radius: 44px 44px 0 0; min-height: auto; padding: 64px 20px; }
   .cta-title-text { font-size: 28px; }
   .cta-title-pill { font-size: 28px; padding: 4px 18px; }
   .cta-desc { font-size: 15px; }
@@ -1345,8 +1345,8 @@ a.card-link {
 
   /* Hero */
   .hero-text,
-  .hero-title-pill span { font-size: 22px; }
-  .hero-emoji { width: 22px; height: 22px; }
+  .hero-title-pill span { font-size: 26px; }
+  .hero-emoji { width: 26px; height: 26px; }
   .hero-header-row { gap: 6px; }
 
   /* Section headings */
