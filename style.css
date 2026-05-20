@@ -44,27 +44,16 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 
-/* Отдельный пилл переключения темы — двойной селектор чтобы перебить базовый .theme-toggle */
-.theme-toggle.theme-toggle--mobile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 22px;
-  min-width: 44px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 32px;
-  box-shadow: 0 0 8px rgba(39, 51, 75, 0.10), 0 4px 4px rgba(39, 51, 75, 0.07);
-  border: none;
-  cursor: pointer;
-  color: #4b4b4b;
-  flex-shrink: 0;
-  transition: color 0.2s, background 0.2s;
-}
-.theme-toggle.theme-toggle--mobile:hover { background: rgba(240, 240, 245, 0.95); }
+/* Внешняя кнопка темы — только мобиле, на десктопе скрыта */
+.theme-toggle.theme-toggle--mobile { display: none; }
 
+/* Для кейс-страниц (без .nav-wrap) — таб сам себя позиционирует */
 .tab-menu {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
   display: flex;
   align-items: center;
   padding: 12px 16px;
@@ -75,6 +64,15 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 0 8px rgba(39, 51, 75, 0.10), 0 4px 4px rgba(39, 51, 75, 0.07);
   white-space: nowrap;
   gap: 8px;
+}
+
+/* На главной — позиционирует .nav-wrap, таб статичный */
+.nav-wrap .tab-menu {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+  z-index: auto;
 }
 
 .nav-link {
@@ -1018,7 +1016,15 @@ a.card-link {
 
   .container { padding: 0 24px; }
 
-  /* Вся нав-обёртка — внизу по центру */
+  /* Таб на кейс-страницах и nav-wrap на главной — оба внизу */
+  .tab-menu {
+    top: auto;
+    bottom: calc(32px + env(safe-area-inset-bottom));
+    gap: 4px;
+    padding: 8px;
+  }
+
+  /* nav-wrap на главной */
   .nav-wrap {
     top: auto;
     bottom: calc(32px + env(safe-area-inset-bottom));
@@ -1028,17 +1034,31 @@ a.card-link {
     align-items: center;
   }
 
-  /* Таб */
-  .tab-menu {
-    gap: 4px;
-    padding: 8px;
-  }
-
-  /* Show only Кейсы, CV, Контакты */
+  /* Show only Кейсы, CV, Контакты; скрыть десктопный toggle */
   .nav-link { display: none; }
   .nav-link--mobile { display: flex; }
   .nav-divider { display: none; }
-  .nav-divider--desktop { display: none; }
+  .tab-menu .theme-toggle { display: none; }
+
+  /* Отдельный пилл переключения темы — показываем только на мобиле */
+  .theme-toggle.theme-toggle--mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 22px;
+    min-width: 44px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 32px;
+    box-shadow: 0 0 8px rgba(39, 51, 75, 0.10), 0 4px 4px rgba(39, 51, 75, 0.07);
+    border: none;
+    cursor: pointer;
+    color: #4b4b4b;
+    flex-shrink: 0;
+    transition: color 0.2s, background 0.2s;
+  }
+  .theme-toggle.theme-toggle--mobile:hover { background: rgba(240, 240, 245, 0.95); }
 
   .nav-link--mobile { padding: 12px 16px; font-size: 15px; }
   .nav-btn { padding: 12px 20px; }
