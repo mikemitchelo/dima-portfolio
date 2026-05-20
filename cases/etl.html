@@ -280,7 +280,7 @@
     document.getElementById('lightboxBack').addEventListener('click', closeLightbox);
 
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
+      if (e.target === lightbox || e.target === lbVideo) closeLightbox();
     });
 
     document.addEventListener('keydown', (e) => {

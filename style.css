@@ -1067,12 +1067,14 @@ a.card-link {
   .hero-location { display: none; }
 
   /* Hero typography */
-  .hero-header-row { flex-direction: column; gap: 8px; }
+  .hero-header-row { flex-direction: row; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .hero-emoji-dash { display: none; }
   .hero-text,
-  .hero-title-pill span { font-size: 40px; }
-  .hero-title-pill { padding: 5px 18px; }
+  .hero-title-pill span { font-size: 34px; }
+  .hero-title-pill { padding: 5px 18px; align-self: center; }
   .hero-emoji { width: 40px; height: 40px; }
   .hero-desc { font-size: 15px; }
+  .hero-content { gap: 12px; }
 
   .section { padding: 40px 0; }
   .section-intro { margin-bottom: 24px; }
@@ -1343,10 +1345,9 @@ a.card-link {
 
   /* Hero */
   .hero-text,
-  .hero-title-pill span { font-size: 32px; }
-  .hero-emoji { width: 32px; height: 32px; }
-  .hero-emoji-dash { gap: 10px; }
-  .hero-header-row { gap: 6px; }
+  .hero-title-pill span { font-size: 28px; }
+  .hero-emoji { width: 28px; height: 28px; }
+  .hero-header-row { gap: 8px; }
 
   /* Section headings */
   .section-heading,
