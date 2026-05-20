@@ -1067,13 +1067,13 @@ a.card-link {
   .hero-location { display: none; }
 
   /* Hero typography */
-  .hero-header-row { flex-direction: row; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .hero-emoji-dash { display: none; }
+  .hero-header-row { flex-direction: row; gap: 10px; justify-content: center; flex-wrap: nowrap; }
+  .hero-emoji-dash { gap: 10px; }
   .hero-text,
-  .hero-title-pill span { font-size: 34px; }
-  .hero-title-pill { padding: 5px 18px; align-self: center; }
-  .hero-emoji { width: 40px; height: 40px; }
-  .hero-desc { font-size: 15px; }
+  .hero-title-pill span { font-size: 26px; }
+  .hero-title-pill { padding: 4px 14px; align-self: center; }
+  .hero-emoji { width: 28px; height: 28px; }
+  .hero-desc { font-size: 14px; }
   .hero-content { gap: 12px; }
 
   .section { padding: 40px 0; }
@@ -1345,9 +1345,9 @@ a.card-link {
 
   /* Hero */
   .hero-text,
-  .hero-title-pill span { font-size: 28px; }
-  .hero-emoji { width: 28px; height: 28px; }
-  .hero-header-row { gap: 8px; }
+  .hero-title-pill span { font-size: 22px; }
+  .hero-emoji { width: 22px; height: 22px; }
+  .hero-header-row { gap: 6px; }
 
   /* Section headings */
   .section-heading,
