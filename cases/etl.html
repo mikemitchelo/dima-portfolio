@@ -270,10 +270,7 @@
 
   <!-- Lightbox -->
   <div class="video-lightbox" id="videoLightbox">
-    <div style="position:relative; display:inline-flex;">
-      <video id="lightboxVideo" autoplay muted loop playsinline></video>
-      <span class="video-badge" id="lightboxBadge"></span>
-    </div>
+    <video id="lightboxVideo" autoplay muted loop playsinline></video>
     <div class="lightbox-bar">
       <button class="lightbox-back" id="lightboxBack">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -333,12 +330,9 @@
     // Video lightbox
     const lightbox  = document.getElementById('videoLightbox');
     const lbVideo   = document.getElementById('lightboxVideo');
-    const lbBadge   = document.getElementById('lightboxBadge');
 
-    function openLightbox(src, badge, badgeStyle) {
+    function openLightbox(src) {
       lbVideo.src = src;
-      lbBadge.textContent = badge;
-      lbBadge.style.cssText = badgeStyle || '';
       lightbox.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
@@ -350,11 +344,11 @@
     }
 
     document.getElementById('videoPreview1').addEventListener('click', () => {
-      openLightbox('../video/Old%20ETL.mp4', 'AS IS');
+      openLightbox('../video/Old%20ETL.mp4');
     });
 
     document.getElementById('videoPreview2').addEventListener('click', () => {
-      openLightbox('../video/NEW%20ETL.mp4', 'New Design', 'background:rgba(113,81,255,0.75);');
+      openLightbox('../video/NEW%20ETL.mp4');
     });
 
     document.getElementById('lightboxBack').addEventListener('click', closeLightbox);
