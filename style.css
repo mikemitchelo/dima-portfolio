@@ -407,13 +407,11 @@ img { display: block; max-width: 100%; }
   }
 }
 
-/* Stagger for cards-row children */
-.cards-row .case-card,
-.cards-row .card-wrapper {
+/* Stagger for cards-grid children */
+.cards-grid .case-card {
   transition-delay: 0.1s;
 }
-.cards-row .case-card:nth-child(2),
-.cards-row .card-wrapper:nth-child(2) {
+.cards-grid > a:nth-child(even) .case-card {
   transition-delay: 0.22s;
 }
 
@@ -461,8 +459,9 @@ a.card-link {
 }
 
 /* Small cards */
-.cards-row {
-  display: flex;
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-bottom: 24px;
 }
@@ -503,6 +502,8 @@ a.card-link {
 .case-card:hover .plant-img {
   transform: scale(1.05);
 }
+.case-card:hover .pix-img-1 { transform: translateX(-50%) scale(1.05); }
+.case-card:hover .pix-img-2 { transform: translateX(-50%) scale(1.05); }
 
 .card-wrapper:hover .float-img--1 {
   transform: scale(1.05);
@@ -513,7 +514,7 @@ a.card-link {
 }
 
 .case-card--blue  { background: #edf6fd; }
-.case-card--green { background: #f0fded; }
+.case-card--green { background: #FEF8EC; }
 
 /* Card wrapper for floating images */
 .card-wrapper {
@@ -526,30 +527,24 @@ a.card-link {
   height: 100%;
 }
 
-/* Floating images (PIX Academy card) */
-.float-img {
-  position: absolute;
-  object-fit: cover;
-  pointer-events: none;
-  z-index: 5;
+/* PIX Academy card images */
+.pix-img-1 {
+  left: 52%; top: 40px;
+  transform: translateX(-50%);
+  width: auto; height: auto;
+  max-width: 85%; max-height: calc(100% - 40px);
+  object-fit: initial;
+  border-radius: 0;
+  z-index: 1;
 }
-.float-img--1 {
-  left: 60px; top: 49px;
-  width: min(262px, 50%);
-  height: auto;
-  aspect-ratio: 262/117;
-  border-radius: 6px;
-  border: 1px solid #f3f3f3;
-}
-.float-img--2 {
-  left: min(248px, 47%); top: 57px;
-  width: min(201px, 39%);
-  height: auto;
-  aspect-ratio: 201/138;
-  transform: rotate(-11.33deg);
-  border-radius: 8px;
-  border: 1px solid #f3f3f3;
-  box-shadow: 0 0 6px rgba(39,51,75,.10), 0 2px 3px rgba(39,51,75,.07);
+.pix-img-2 {
+  left: 36%; top: 16px;
+  transform: translateX(-50%);
+  width: auto; height: auto;
+  max-width: 60%; max-height: calc(100% - 16px);
+  object-fit: initial;
+  border-radius: 0;
+  z-index: 2;
 }
 
 /* Image areas */
@@ -578,19 +573,19 @@ a.card-link {
 }
 
 /* PIX Academy image area */
-.card-img-area--pix { height: 210px; position: relative; }
+.card-img-area--pix { height: 210px; position: relative; overflow: hidden; }
 
 /* Mobile/Bookmarks images */
 .card-img-area--mobile { height: 220px; }
 .mob-img-1 {
-  left: 124px; top: 25px;
-  width: 64px; height: 156px;
+  left: 110px; top: 22px;
+  width: 70px; height: 170px;
   border-radius: 3px;
   border: 1px solid #f3f3f3;
 }
 .mob-img-2 {
-  left: 200px; top: 20px;
-  width: 199px; height: auto;
+  left: 190px; top: 16px;
+  width: 214px; height: auto;
   aspect-ratio: 199/191;
   border-radius: 9px;
   border: 1px solid #f3f3f3;
@@ -605,15 +600,14 @@ a.card-link {
   padding: 30px 20px 10px;
 }
 .plant-img {
-  object-fit: cover;
+  object-fit: contain;
   height: 183px;
   width: 84px;
   border-radius: 12px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid rgba(0,0,0,0.1);
   flex-shrink: 0;
 }
 .plant-img--2 { width: 88px; }
-.plant-img--3 { transform: scaleX(-1); }
 
 /* Card content */
 .card-content {
@@ -983,8 +977,8 @@ a.card-link {
   .section-desc { font-size: 14px; }
 
   /* Cards: single column */
-  .cards-row {
-    flex-direction: column;
+  .cards-grid {
+    grid-template-columns: 1fr;
     gap: 16px;
   }
   .case-card { min-height: auto; }
@@ -1005,10 +999,10 @@ a.card-link {
   .cta-title-pill { font-size: 40px; padding: 6px 28px; }
   .cta-desc { font-size: 16px; }
 
-  /* PIX Academy: reduce empty area, adjust float images */
-  .card-img-area--pix { height: 160px; }
-  .float-img--1 { left: 30px; top: 20px; }
-  .float-img--2 { left: 44%; top: 28px; }
+  /* PIX Academy: tablet — cards go full-width so clamp image widths */
+  .card-img-area--pix { height: 180px; }
+  .pix-img-1 { width: auto; left: 50%; transform: translateX(-50%); }
+  .pix-img-2 { width: min(430px, calc(100% - 32px)); top: 20px; left: 50%; transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {
@@ -1125,6 +1119,16 @@ a.card-link {
     text-align: center;
   }
 
+  /* Featured card: full-bleed image on mobile */
+  .featured-img-area {
+    padding: 0;
+  }
+  .featured-img-area img {
+    border-radius: 0;
+    width: 50%;
+    margin-top: 24px;
+  }
+
   /* Dashboard images: flex layout on mobile */
   .card-img-area--dashboard {
     height: auto;
@@ -1139,17 +1143,27 @@ a.card-link {
     top: auto;
   }
   .card-img-area--dashboard .dash-img-1 {
-    width: 53%;
+    width: 48%;
     height: auto;
+    margin-left: 16px;
   }
   .card-img-area--dashboard .dash-img-2 {
     width: 45%;
     height: auto;
     margin-top: 20px;
+    margin-left: -24px;
   }
 
-  /* PIX Academy: further reduce */
+  /* PIX Academy: mobile */
   .card-img-area--pix { height: 140px; }
+  .pix-img-1 { width: auto; max-height: 98px; height: auto; top: 50px; left: 62%; transform: translateX(-50%); }
+  .pix-img-2 {
+    width: auto;
+    height: calc(100% - 20px);
+    top: 20px;
+    left: 40%;
+    transform: translateX(-50%);
+  }
 
   /* Bookmarks images: flex layout on mobile */
   .card-img-area--mobile {
@@ -1167,17 +1181,16 @@ a.card-link {
     top: auto;
   }
   .card-img-area--mobile .mob-img-1 {
-    width: 28%;
-    max-width: 80px;
-    height: 150px;
-    object-fit: cover;
+    width: 30%;
+    max-width: 90px;
+    height: auto;
+    object-fit: contain;
     align-self: flex-end;
   }
   .card-img-area--mobile .mob-img-2 {
-    flex: 1;
-    width: auto;
-    height: 150px;
-    object-fit: cover;
+    width: 55%;
+    height: auto;
+    object-fit: contain;
     align-self: flex-end;
   }
 }
@@ -1316,12 +1329,10 @@ a.card-link {
   box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
 }
 
-/* Float image borders */
-[data-theme="dark"] .float-img--1,
-[data-theme="dark"] .float-img--2 { border-color: rgba(255,255,255,0.06); }
+/* PIX Academy dark theme */
 [data-theme="dark"] .mob-img-1,
 [data-theme="dark"] .mob-img-2,
-[data-theme="dark"] .plant-img { border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .plant-img { border-color: rgba(255,255,255,0.12); }
 
 /* Responsive dark override for stacked skill borders */
 @media (max-width: 768px) {

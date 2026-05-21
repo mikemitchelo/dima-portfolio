@@ -61,6 +61,7 @@
 
     @media (max-width: 768px) {
       .video-badge { font-size: 10px; padding: 5px 10px; top: 8px; left: 8px; }
+      .badge-row { top: 8px !important; left: 8px !important; gap: 4px; }
     }
 
     .video-lightbox {
@@ -230,7 +231,7 @@
         <div style="overflow:hidden; border-radius:16px;">
           <div class="video-preview-wrap" id="videoPreview2" style="max-width:100%;">
             <span class="video-badge" style="background:rgba(113,81,255,0.75);">New Design</span>
-            <video src="../video/Редактор тем/dashboard-new.mp4" autoplay muted loop playsinline></video>
+            <video src="../video/Редактор тем/Редактор Тем NEW.mp4" autoplay muted loop playsinline></video>
           </div>
         </div>
       </div>
@@ -265,6 +266,20 @@
             <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
           </div>
         </div>
+        <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
+          <img loading="lazy" src="../images/Редактор тем/Снимок экрана — 2026-05-20 в 20.41.42.png" alt="Редактор тем — скриншот 3" style="width:100%; max-width:100%; display:block;">
+          <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
+            <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
+            <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
+          </div>
+        </div>
+        <div style="position:relative; cursor:pointer; border-radius:16px; overflow:hidden;" class="dash-screen-wrap">
+          <img loading="lazy" src="../images/Редактор тем/Снимок экрана — 2026-05-20 в 20.42.24.png" alt="Редактор тем — скриншот 4" style="width:100%; max-width:100%; display:block;">
+          <div class="badge-row" style="position:absolute; top:14px; left:14px; display:flex; gap:6px; z-index:2;">
+            <span class="video-badge" style="position:static; background:rgba(113,81,255,0.75);">New Design</span>
+            <span class="video-badge" style="position:static; background:rgba(0,0,0,0.55);">Screenshot</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -272,7 +287,7 @@
 
   <!-- Image lightbox -->
   <div class="video-lightbox" id="imgLightbox">
-    <img id="lightboxImg" src="" alt="" style="max-width:min(92vw,1200px); max-height:82vh; border-radius:16px; box-shadow:0 40px 100px rgba(0,0,0,0.45);">
+    <img id="lightboxImg" src="" alt="" style="max-width:min(92vw,1200px); max-height:82vh; border-radius:16px; box-shadow:0 40px 100px rgba(0,0,0,0.45); transform:scale(0.96); transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);">
     <div class="lightbox-bar">
       <button class="lightbox-back" id="imgLightboxBack">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -338,6 +353,7 @@
 
     document.getElementById('imgLightboxBack').addEventListener('click', closeImgLightbox);
     imgLightbox.addEventListener('click', (e) => { if (e.target === imgLightbox || e.target === lbImg) closeImgLightbox(); });
+    imgLightbox.addEventListener('transitionend', () => { if (imgLightbox.classList.contains('is-open')) lbImg.style.transform = 'scale(1)'; else lbImg.style.transform = 'scale(0.96)'; });
     // Video lightbox
     const lightbox = document.getElementById('videoLightbox');
     const lbVideo  = document.getElementById('lightboxVideo');
@@ -359,7 +375,7 @@
     });
 
     document.getElementById('videoPreview2').addEventListener('click', () => {
-      openLightbox('../video/Редактор тем/dashboard-new.mp4');
+      openLightbox('../video/Редактор тем/Редактор Тем NEW.mp4');
     });
 
     document.getElementById('lightboxBack').addEventListener('click', closeLightbox);

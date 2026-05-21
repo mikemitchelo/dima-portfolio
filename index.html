@@ -109,11 +109,11 @@
       </article>
       </a>
 
-      <!-- Cards row 1 -->
-      <div class="cards-row fade-in">
+      <!-- Cards grid -->
+      <div class="cards-grid">
         <!-- Dashboard -->
         <a href="cases/dashboard.html" class="card-link">
-        <article class="case-card case-card--blue">
+        <article class="case-card case-card--blue fade-in">
           <div class="card-img-area card-img-area--dashboard">
             <img src="images/Редактор тем/Редактор тем Cover.png" alt="" class="abs-img dash-img-1" loading="lazy">
             <img src="images/Редактор тем/Редактор тем Cover 1.png" alt="" class="abs-img dash-img-2" loading="lazy">
@@ -140,10 +140,10 @@
 
         <!-- PIX Academy -->
         <a href="cases/pix-academy.html" class="card-link">
-        <div class="card-wrapper">
-          <article class="case-card case-card--blue">
+          <article class="case-card case-card--blue fade-in">
             <div class="card-img-area card-img-area--pix">
-              <!-- images float outside card in wrapper -->
+              <img src="images/Пикс Академия/обложка2.png" alt="" class="abs-img pix-img-1" loading="lazy">
+              <img src="images/Пикс Академия/обложка.png" alt="" class="abs-img pix-img-2" loading="lazy">
             </div>
             <div class="card-content">
               <div class="card-meta">
@@ -163,20 +163,14 @@
               </div>
             </div>
           </article>
-          <img src="images/Пикс акад.webp" alt="" class="float-img float-img--1" loading="lazy">
-          <img src="images/Пикс акад 2.webp" alt="" class="float-img float-img--2" loading="lazy">
-        </div>
         </a>
-      </div>
 
-      <!-- Cards row 2 -->
-      <div class="cards-row fade-in">
         <!-- Bookmarks -->
         <a href="cases/bookmarks.html" class="card-link">
-        <article class="case-card case-card--blue">
+        <article class="case-card case-card--blue fade-in">
           <div class="card-img-area card-img-area--mobile">
-            <img src="images/Заклдаки 1.webp" alt="" class="abs-img mob-img-1" loading="lazy">
-            <img src="images/Закладки 2.webp" alt="" class="abs-img mob-img-2" loading="lazy">
+            <img src="images/Рефакторинг закладок/обложка.png" alt="" class="abs-img mob-img-1" loading="lazy">
+            <img src="images/Рефакторинг закладок/обложка 2.png" alt="" class="abs-img mob-img-2" loading="lazy">
           </div>
           <div class="card-content">
             <div class="card-meta">
@@ -200,11 +194,11 @@
 
         <!-- Plant pal -->
         <a href="cases/plant-pal.html" class="card-link">
-        <article class="case-card case-card--green">
+        <article class="case-card case-card--green fade-in">
           <div class="card-img-area card-img-area--plant">
-            <img src="images/Плант 1.webp" alt="" class="plant-img plant-img--1" loading="lazy">
-            <img src="images/Плант 2.webp" alt="" class="plant-img plant-img--2" loading="lazy">
-            <img src="images/Плант 1.webp" alt="" class="plant-img plant-img--3" loading="lazy">
+            <img src="images/Plant pal/скрин.png" alt="" class="plant-img plant-img--1" loading="lazy">
+            <img src="images/Plant pal/скрин 2.png" alt="" class="plant-img plant-img--2" loading="lazy">
+            <img src="images/Plant pal/скрин 4.png" alt="" class="plant-img plant-img--3" loading="lazy">
           </div>
           <div class="card-content">
             <div class="card-meta">
@@ -442,7 +436,7 @@
         const top = el.getBoundingClientRect().top;
         if (top < vh) revealEl(el);
       });
-    }
+  }
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', checkOnLoad);
