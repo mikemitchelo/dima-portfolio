@@ -1132,7 +1132,7 @@ a.card-link {
   .card-img-area--dashboard {
     height: auto;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
     gap: 8px;
     padding: 16px 16px 0;
@@ -1149,7 +1149,6 @@ a.card-link {
   .card-img-area--dashboard .dash-img-2 {
     width: 45%;
     height: auto;
-    margin-top: 20px;
   }
 
   /* PIX Academy: mobile */
