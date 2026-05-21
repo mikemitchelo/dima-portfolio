@@ -1134,6 +1134,7 @@ a.card-link {
     height: auto;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     gap: 8px;
     padding: 16px 16px 0;
   }
@@ -1145,13 +1146,11 @@ a.card-link {
   .card-img-area--dashboard .dash-img-1 {
     width: 48%;
     height: auto;
-    margin-left: 16px;
   }
   .card-img-area--dashboard .dash-img-2 {
     width: 45%;
     height: auto;
     margin-top: 20px;
-    margin-left: -24px;
   }
 
   /* PIX Academy: mobile */
