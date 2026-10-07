@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Рефакторинг закладок — Дима Колесников</title>
 
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../cases.css">
@@ -111,13 +112,13 @@
         <div style="overflow:hidden; border-radius:16px;">
           <div class="video-preview-wrap" id="videoPreview1" style="max-width:100%;">
             <span class="video-badge">Old Design</span>
-            <video src="../video/Закладки/OLD.mp4" autoplay muted loop playsinline></video>
+            <video src="../video/Закладки/OLD.mp4" preload="metadata" autoplay muted loop playsinline></video>
           </div>
         </div>
         <div style="overflow:hidden; border-radius:16px;">
           <div class="video-preview-wrap" id="videoPreview2" style="max-width:100%;">
             <span class="video-badge" style="background:rgba(113,81,255,0.75);">New Design</span>
-            <video src="../video/Закладки/New design.mp4" autoplay muted loop playsinline></video>
+            <video src="../video/Закладки/New design.mp4" preload="metadata" autoplay muted loop playsinline></video>
           </div>
         </div>
       </div>
